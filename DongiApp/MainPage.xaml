@@ -22,29 +22,29 @@
                 <Label x:Name="lbltotal" Grid.Row="1" FontAttributes="Bold" 
                        Text="0 تومان "
                        HorizontalTextAlignment="Center" 
-                       VerticalTextAlignment="Center" 
-                       FontSize="35"
+                       VerticalTextAlignment="Center"
+                       FontSize="Header"
                        TextColor="{StaticResource LightFont}"/>
                 <BoxView  HeightRequest="150" WidthRequest="2" Grid.Row="1" Grid.Column="1" Color="#adadad" VerticalOptions="Center" HorizontalOptions="Center"/>
-
                 <VerticalStackLayout Grid.Row="1" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center">
-                    <Label Text="مجموع اولیه :" TextColor="{StaticResource LightFont}"/>
-                    <Label x:Name="lblsubtotal" FontAttributes="Bold" Text="0 تومان" TextColor="{StaticResource LightFont}"/>
-                    
-                    <Label Text="انعام" TextColor="{StaticResource LightFont}" Margin="0,10,0,0"/>
-                    <Label x:Name="lbltip" FontAttributes="Bold" TextColor="{StaticResource LightFont}" Text="0 تومان"/>
 
+                    <Label Text="مجموع اولیه : "  TextColor="{StaticResource LightFont}" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="lblsubtotal"  FontAttributes="Bold" Text="0 تومان" TextColor="{StaticResource LightFont}" HorizontalTextAlignment="Center"/>
+
+                    <Label Text="انعام :" TextColor="{StaticResource LightFont}" HorizontalTextAlignment="Center"/>
+                    <Label x:Name="lbltipperson" FontAttributes="Bold" TextColor="{StaticResource LightFont}" Text="0 تومان" HorizontalTextAlignment="Center"/>
+                    
+                    
                 </VerticalStackLayout>
             </Grid>
             
         </Border>
         <Grid Grid.Row="1" Margin="0,15,0,0" RowDefinitions="*,*,*,*" ColumnDefinitions="0.7*,0.3*">
-            <Entry x:Name="txtbill" Grid.Column="0" Text="0" 
+            <Entry x:Name="txtbill" Grid.Column="0" Placeholder="7000"
                    BackgroundColor="{StaticResource SectionColor}"
                    TextColor="{StaticResource LightFont}" 
                    VerticalOptions="Center" Keyboard="Numeric"
-                   HorizontalTextAlignment="End"
-                   Completed="txtbill_Completed"/>
+                   TextChanged="Txtbill_Completed" />
             
             <Label Grid.Column="1" Text="مبلغ را وارد کنید : " VerticalOptions="Center" TextColor="{StaticResource LightFont}"/>
 
@@ -61,11 +61,12 @@
             </HorizontalStackLayout>
             <Label Grid.Row="1" Grid.Column="1" Text="درصد انعام : " TextColor="{StaticResource LightFont}" VerticalOptions="Center"/>
 
-            <Label x:Name="lbltipperson" Grid.Row="2" Grid.Column="1" 
-                   Text="پاداش 0%" TextColor="{StaticResource LightFont}"
+            <Label x:Name="lbltip" Grid.Row="2" Grid.Column="1" 
+                   Text="انعام 0%" TextColor="{StaticResource LightFont}"
                    VerticalOptions="Center"/>
             
-            <Slider Grid.Row="2" Grid.Column="0" 
+            <Slider x:Name="sldTip"
+                Grid.Row="2" Grid.Column="0" 
                     Maximum="50" Minimum="0" 
                     ValueChanged="Slider_ValueChanged"/>
             <Label Grid.Row="3" Grid.Column="1" Text="تعداد نفرات :" 
@@ -76,10 +77,10 @@
                                    HeightRequest="70">
                 
                 
-                <Button x:Name="highnus" Text="+" FontSize="Large" WidthRequest="70" Clicked="highnus_Clicked"/>
+                <Button x:Name="highnus" Text="+" FontSize="Large" WidthRequest="70" Clicked="Highnus_Clicked"/>
                 
                 <Label x:Name="txtnumperson"
-                    Text="0" WidthRequest="100" 
+                    Text="1" WidthRequest="100" 
                        BackgroundColor="{StaticResource SectionColor}" 
                        FontSize="Large" 
                        HorizontalTextAlignment="Center" 
@@ -87,7 +88,7 @@
                        TextColor="{StaticResource LightFont}"
                        Margin="-5,0,-5,0"/>
                 
-                <Button x:Name="minus" Text="-" FontSize="Large" WidthRequest="70" Clicked="minus_Clicked"/>
+                <Button x:Name="minus" Text="-" FontSize="Large" WidthRequest="70" Clicked="Minus_Clicked"/>
             </HorizontalStackLayout> 
         </Grid>
 
