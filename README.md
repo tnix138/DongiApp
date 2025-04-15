@@ -38,12 +38,12 @@
 
 1. این پروژه را از GitHub کلون کنید:
     ```bash
-    git clone https://github.com/your-repo/project-name.git
+    git clone https://github.com/tnix138/DongiApp.git
     ```
 
 2. وارد پوشه پروژه شوید:
     ```bash
-    cd project-name
+    cd DongiApp
     ```
 
 3. پروژه را باز کنید و اجرا کنید.
